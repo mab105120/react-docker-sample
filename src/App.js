@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Practice building front end applications with React and Docker!
+          Practice building front end applications with React and Docker!!
         </p>
         <a
           className="App-link"
