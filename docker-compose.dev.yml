@@ -1,0 +1,19 @@
+version: '3'
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes: # use volumes to create a reference from the container file system to local file system.
+      - /app/node_mod ules # exclude reference to app/node_modules
+      - .:/app:ro  # map the /app folder in the container to current directory on local machine
+  frontend_test:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - app/node_modules
+      - .:/app:ro
+    command: ["npm", "test"]
